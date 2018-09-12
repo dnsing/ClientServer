@@ -17,7 +17,7 @@ public class Client1 {
 		obj.put("X1", "numero en X");
 		obj.put("Y1", "numero en Y");
 	 
-		 try (FileWriter file = new FileWriter("test1.json")) {
+		 try (FileWriter file = new FileWriter("test.json")) {
 
 	            file.write(obj.toJSONString());
 	            file.flush();

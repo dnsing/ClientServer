@@ -20,14 +20,17 @@ public class Server {
 		s2 = new ServerSocket(70);
 		ss2 = s2.accept();
 		System.out.println("CLiente1");
+
 		
-		Scanner sc = new Scanner(System.in);
-		int number = sc.nextInt();
-		if(number==0) {
-			Server.C0();
-		}
-		else {
-			System.out.println("tengo sueno");
+		while(true) {
+			Scanner sc = new Scanner(System.in);
+			int number = sc.nextInt();
+			if(number==0) {
+				Server.C0();
+			}
+			else {
+				Server.C1();
+			}
 		}
 	}
 	public static void C0() throws IOException{
@@ -38,7 +41,19 @@ public class Server {
 				System.exit(1);
 			}
 			System.out.println("mensaje cliente " + s);
-			
+			return;
+		}
+	}
+	
+	public static void C1() throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(ss2.getInputStream()));
+		while(true) {
+			Object s = br.readLine();
+			if(s.equals("exit")==true) {
+				System.exit(1);
+			}
+			System.out.println("mensaje cliente " + s);
+			return;
 		}
 	}
 
