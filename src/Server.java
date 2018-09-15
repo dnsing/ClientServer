@@ -28,8 +28,11 @@ public class Server {
 			if(number==0) {
 				Server.C0();
 			}
-			else {
+			if(number==1) {
 				Server.C1();
+			}
+			else {
+				System.out.print("No ha digitado nungun numero correcto");
 			}
 		}
 	}
